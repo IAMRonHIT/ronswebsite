@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "apexcharts": "^4.0.0",
     "clsx": "^2.1.0",
@@ -22,8 +25,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
     "@babel/plugin-proposal-decorators": "^7.24.0",
+    "@eslint/js": "^9.9.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@types/uuid": "^9.0.8",
@@ -33,6 +36,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
     "globals": "^15.9.0",
+    "netlify-cli": "^17.37.2",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
