@@ -8,7 +8,7 @@ const TeamMember = ({ name, role, image, linkedin }: { name: string, role: strin
         <img
           src={image}
           alt={name}
-          className="w-full h-[300px] object-cover"
+          className="w-full h-[250px] sm:h-[300px] object-cover object-center"
         />
       </div>
       {linkedin && (
@@ -24,9 +24,9 @@ const TeamMember = ({ name, role, image, linkedin }: { name: string, role: strin
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2E] via-transparent to-transparent" />
     </div>
-    <div className="p-6">
-      <h3 className="text-xl font-semibold mb-1">{name}</h3>
-      <p className="text-gray-400">{role}</p>
+    <div className="p-4 sm:p-6">
+      <h3 className="text-lg sm:text-xl font-semibold mb-1">{name}</h3>
+      <p className="text-sm sm:text-base text-gray-400">{role}</p>
     </div>
   </div>
 );
@@ -36,35 +36,35 @@ const Team = () => {
     {
       name: "Tim Hunter",
       role: "Founder & CEO",
-      image: "/src/images/Team/Tim.png",
-      linkedin: "#"
+      image: "D:/Ron Official/website/Ronnyy/src/images/Team/Tim.png",
+      linkedin: "https://www.linkedin.com/in/thesaasynurse"
     },
     {
       name: "Bill Philbrick",
       role: "Co-Founder and Chief Compliance Officer",
-      image: "/src/images/Team/Bill.jpg",
+      image: "D:/Ron Official/website/Ronnyy/src/images/Team/Bill.jpg",
       linkedin: "https://www.linkedin.com/in/william-philbrick-j-d-ll-m-3475ba94/"
     },
     {
       name: "Nicole Zonin",
       role: "Chief Clinical Officer",
-      image: "/src/images/Team/Nicole.jpeg",
+      image: "D:/Ron Official/website/Ronnyy/src/images/Team/Nicole.jpeg",
       linkedin: "https://www.linkedin.com/in/nicole-zonin/"
     },
     {
       name: "Abigail Mitchell",
       role: "Head of Research & Development",
-      image: "/src/images/Team/Abigail.jpg",
+      image: "D:/Ron Official/website/Ronnyy/src/images/Team/Abigail Mitchell.jpg",
       linkedin: "https://www.linkedin.com/in/dr-abigail-mitchell-0a515939"
     },
     {
       name: "Natalie Schwartz",
       role: "Chief Medical Officer",
-      image: "/src/images/Team/natalie.jpg",
+      image: "D:/Ron Official/website/Ronnyy/src/images/Team/natalie.jpg",
       linkedin: "https://www.linkedin.com/in/natalie-schwartz-md-ms-face-cpe-7211b37/"
     },
     {
-      name: "Mike Thorn",
+      name: "Michael Thorn",
       role: "Strategic Advisor",
       image: "/src/images/Team/michael-thorn-jr-rochester-mn.jpg",
       linkedin: "https://www.linkedin.com/in/michaeljthorn/"
@@ -85,7 +85,7 @@ const Team = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {team.map((member, index) => (
             <TeamMember key={index} {...member} />
           ))}
