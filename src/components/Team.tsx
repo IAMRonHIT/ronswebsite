@@ -41,33 +41,33 @@ const Team = () => {
     },
     {
       name: "Bill Philbrick",
-      role: "Chief Technology Officer",
+      role: "Co-Founder and Chief Compliance Officer",
       image: "/src/images/Team/Bill.jpg",
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/william-philbrick-j-d-ll-m-3475ba94/"
     },
     {
       name: "Nicole Zonin",
-      role: "Head of AI Research",
+      role: "Chief Clinical Officer",
       image: "/src/images/Team/Nicole.jpeg",
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/nicole-zonin/"
     },
     {
       name: "Abigail Mitchell",
-      role: "Clinical Integration Specialist",
-      image: "/src/images/Team/Abigail Mitchell.jpg",
-      linkedin: "#"
+      role: "Head of Research & Development",
+      image: "/src/images/Team/Abigail.jpg",
+      linkedin: "https://www.linkedin.com/in/dr-abigail-mitchell-0a515939"
     },
     {
       name: "Natalie Schwartz",
-      role: "Healthcare Operations Director",
-      image: "/src/images/Team/Natalie.jpg",
-      linkedin: "#"
+      role: "Chief Medical Officer",
+      image: "/src/images/Team/natalie.jpg",
+      linkedin: "https://www.linkedin.com/in/natalie-schwartz-md-ms-face-cpe-7211b37/"
     },
     {
       name: "Mike Thorn",
-      role: "Senior Software Engineer",
+      role: "Strategic Advisor",
       image: "/src/images/Team/michael-thorn-jr-rochester-mn.jpg",
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/michaeljthorn/"
     }
   ];
 
