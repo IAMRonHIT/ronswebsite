@@ -6,8 +6,6 @@ interface CarouselProps {
   items: {
     title: string;
     content: string;
-    gradientFrom?: string;
-    gradientTo?: string;
   }[];
 }
 
@@ -23,62 +21,57 @@ export const Carousel = ({ items }: CarouselProps) => {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-xl flex flex-col md:flex-row">
-      <img
-        src="D:/Ron Official/website/Ronnyy/src/images/Assets/RunningHeatlhcare.png"
-        alt="Running Healthcare"
-        className="w-full md:w-1/3 h-48 md:h-auto object-cover"
-      />
-      <div className="relative overflow-hidden rounded-xl w-full md:w-2/3">
-        <img
-          src="D:/Ron Official/website/Ronnyy/src/images/Assets/The Ron AI Logo.png"
-          alt="The Ron AI Logo"
-          className="absolute top-4 md:top-8 left-1/2 transform -translate-x-1/2 w-24 md:w-32 h-auto"
-        />
-        <div className="absolute top-16 md:top-24 w-full flex justify-between px-4 z-10">
+    <div className="relative overflow-hidden rounded-xl flex flex-col md:flex-row max-w-[1200px] mx-auto">
+      <div className="relative overflow-hidden rounded-xl w-full min-h-[400px] bg-[#001B29]/90">
+        <div className="absolute top-6 right-6 text-[#39CCCC] text-sm">
+          {currentIndex + 1} / {items.length}
+        </div>
+        
+        <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-6 z-10">
           <button
             onClick={prevSlide}
-            className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
+            className="bg-[#001B29]/80 hover:bg-[#001B29] p-4 rounded-full transition-all duration-300 hover:scale-110"
           >
-            <ChevronLeft className="text-[#39CCCC]" />
+            <ChevronLeft className="text-[#39CCCC] w-6 h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
+            className="bg-[#001B29]/80 hover:bg-[#001B29] p-4 rounded-full transition-all duration-300 hover:scale-110"
           >
-            <ChevronRight className="text-[#39CCCC]" />
+            <ChevronRight className="text-[#39CCCC] w-6 h-6" />
           </button>
         </div>
+
         <div 
-          className="transition-transform duration-500 ease-in-out flex"
+          className="transition-transform duration-500 ease-in-out flex h-full"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {items.map((item, index) => (
             <div
               key={index}
-              className="min-w-full p-8 bg-[#39CCCC]/10 rounded-lg border border-[#39CCCC]/20"
+              className="min-w-full p-12 flex flex-col justify-center items-center text-center"
             >
-              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xs md:text-sm text-[#39CCCC]">
-                {index + 1} / {items.length}
-              </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-center text-[#39CCCC] px-2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-[#39CCCC]">
                 {item.title}
               </h2>
-              <p className="text-base md:text-lg text-gray-300 text-center px-4">{item.content}</p>
+              <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                {item.content}
+              </p>
             </div>
           ))}
         </div>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
           {items.map((_, index) => (
             <button
               key={index}
+              onClick={() => setCurrentIndex(index)}
               className={cn(
                 "w-2 h-2 rounded-full transition-all duration-300",
                 currentIndex === index 
-                  ? "bg-[#39CCCC] w-4" 
+                  ? "bg-[#39CCCC] w-8" 
                   : "bg-[#39CCCC]/30 hover:bg-[#39CCCC]/50"
               )}
-              onClick={() => setCurrentIndex(index)}
             />
           ))}
         </div>

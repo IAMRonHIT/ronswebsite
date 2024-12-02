@@ -21,7 +21,7 @@ const Hero = () => {
               <img 
                 src="/src/images/Assets/The Ron AI Logo.png"
                 alt="Ron AI"
-                className="h-12 w-auto"
+                className="h-32 w-auto transform scale-150 hover:scale-[1.6] transition-transform duration-300"
               />
             </div>
             

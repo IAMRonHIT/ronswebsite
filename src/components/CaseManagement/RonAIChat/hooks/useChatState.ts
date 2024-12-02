@@ -125,20 +125,20 @@ export const useChatState = () => {
             date: "2024-03-01",
             type: "Nuclear Stress Test",
             results: {
-              maxHeartRate: "142 bpm (85% of predicted)",
-              peakBP: "168/92 mmHg",
-              stSegmentChanges: "2.5mm ST depression in V3-V5",
-              symptoms: "Chest discomfort at peak exercise",
-              duration: "7 minutes 20 seconds",
-              mets: "8.5",
+              maxHeartRate: "142 bpm (78% of predicted)",
+              peakBP: "110/70 mmHg (dropped from 140/85)",
+              stSegmentChanges: "3.0mm ST depression in V3-V5",
+              symptoms: "Significant chest pain and dyspnea at stage 2",
+              duration: "7 minutes (terminated early)",
+              mets: "4.0",
               findings: [
-                "Significant ST depression during exercise",
-                "Abnormal myocardial perfusion",
-                "Reduced ejection fraction (48%)",
-                "Wall motion abnormalities in LAD territory"
+                "Severe ST depression during submaximal exercise",
+                "Large reversible perfusion defect in LAD territory",
+                "Stress-induced wall motion abnormality",
+                "Exercise-induced hypotension"
               ],
-              conclusion: "Strongly positive for inducible ischemia",
-              recommendation: "Cardiac catheterization recommended"
+              conclusion: "High-risk positive stress test",
+              recommendation: "Urgent cardiac catheterization indicated"
             },
             approvalProbability: 99
           },

@@ -5,6 +5,7 @@ import About from './components/About';
 import Features from './components/Features';
 import Benefits from './components/Benefits';
 import Team from './components/Team';
+import FinalRule from './components/FinalRule';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { NotificationProvider } from './components/CaseManagement/NotificationSystem';
@@ -19,6 +20,7 @@ function App() {
         <Features />
         <Benefits />
         <Team />
+        <FinalRule />
         <Contact />
         <Footer />
       </div>

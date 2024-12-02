@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   CheckCircle,
   Loader2,
-  ArrowRight
+  ArrowRight,
+  RefreshCw,
+  Home
 } from 'lucide-react';
 
 interface DemoStep {
@@ -54,6 +56,7 @@ export const ComplianceDemo: FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
   const [showResponse, setShowResponse] = useState(false);
+  const [isDemoComplete, setIsDemoComplete] = useState(false);
 
   const handleAction = async () => {
     setIsProcessing(true);
@@ -67,9 +70,60 @@ export const ComplianceDemo: FC = () => {
   };
 
   const handleNext = () => {
-    setCurrentStep((prev) => (prev + 1) % demoSteps.length);
-    setShowResponse(false);
+    if (currentStep === demoSteps.length - 1) {
+      setIsDemoComplete(true);
+    } else {
+      setCurrentStep((prev) => (prev + 1) % demoSteps.length);
+      setShowResponse(false);
+    }
   };
+
+  const resetDemo = () => {
+    setCurrentStep(0);
+    setShowResponse(false);
+    setIsProcessing(false);
+    setIsDemoComplete(false);
+  };
+
+  const returnToWebsite = () => {
+    window.location.href = '/';
+  };
+
+  if (isDemoComplete) {
+    return (
+      <div className="bg-gradient-to-br from-[#001B29]/95 to-[#001B29]/85 rounded-xl border border-[#39CCCC]/20 p-6 shadow-glow">
+        <div className="text-center space-y-6">
+          <h3 className="text-xl font-semibold text-[#39CCCC]">
+            Demo Complete!
+          </h3>
+          <p className="text-gray-400">
+            You've seen how Ron AI handles Final Rule compliance requirements.
+            What would you like to do next?
+          </p>
+          <div className="flex justify-center space-x-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={returnToWebsite}
+              className="flex items-center px-6 py-2 bg-[#39CCCC] text-[#0A0F1B] rounded-lg font-medium hover:bg-[#39CCCC]/90 transition-colors"
+            >
+              <Home className="w-4 h-4 mr-2" />
+              Return to Website
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={resetDemo}
+              className="flex items-center px-6 py-2 border border-[#39CCCC] text-[#39CCCC] rounded-lg font-medium hover:bg-[#39CCCC]/10 transition-colors"
+            >
+              <RefreshCw className="w-4 h-4 mr-2" />
+              Start New Case
+            </motion.button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-gradient-to-br from-[#001B29]/95 to-[#001B29]/85 rounded-xl border border-[#39CCCC]/20 p-6 shadow-glow">
@@ -151,7 +205,7 @@ export const ComplianceDemo: FC = () => {
                     onClick={handleNext}
                     className="flex items-center text-sm text-[#39CCCC] hover:text-[#39CCCC]/80 transition-colors"
                   >
-                    Next Step
+                    {currentStep === demoSteps.length - 1 ? 'Complete Demo' : 'Next Step'}
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </button>
                 </div>

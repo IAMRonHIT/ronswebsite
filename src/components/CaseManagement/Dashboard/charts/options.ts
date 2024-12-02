@@ -23,28 +23,39 @@ export const careJourneyChartOptions: ApexOptions = {
   plotOptions: {
     bar: {
       horizontal: false,
-      borderRadius: 6,
-      columnWidth: '45%',
+      borderRadius: 8,
+      columnWidth: '55%',
     },
   },
   dataLabels: { enabled: false },
   stroke: {
-    width: 1,
+    width: 0,
     colors: ['transparent']
   },
   grid: {
     show: true,
-    borderColor: 'rgba(57, 204, 204, 0.1)',
-    strokeDashArray: 3,
+    borderColor: 'rgba(57, 204, 204, 0.05)',
+    strokeDashArray: 5,
     position: 'back',
+    xaxis: {
+      lines: {
+        show: false
+      }
+    },
+    yaxis: {
+      lines: {
+        show: true
+      }
+    }
   },
-  colors: ['#39CCCC', '#00FF7F', '#FF4D4D'],
+  colors: ['rgba(57, 204, 204, 0.8)', 'rgba(0, 255, 127, 0.7)', 'rgba(255, 77, 77, 0.7)'],
   xaxis: {
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
     labels: {
       style: {
-        colors: Array(9).fill('rgba(255, 255, 255, 0.6)'),
+        colors: Array(9).fill('rgba(255, 255, 255, 0.5)'),
         fontFamily: 'Inter, sans-serif',
+        fontSize: '12px'
       }
     },
     axisBorder: { show: false },
@@ -53,8 +64,9 @@ export const careJourneyChartOptions: ApexOptions = {
   yaxis: {
     labels: {
       style: {
-        colors: 'rgba(255, 255, 255, 0.6)',
+        colors: 'rgba(255, 255, 255, 0.5)',
         fontFamily: 'Inter, sans-serif',
+        fontSize: '12px'
       }
     }
   },
@@ -75,16 +87,17 @@ export const careJourneyChartOptions: ApexOptions = {
     offsetY: -25,
     offsetX: -5,
     labels: {
-      colors: 'rgba(255, 255, 255, 0.8)'
+      colors: 'rgba(255, 255, 255, 0.7)'
     }
   },
   fill: {
     opacity: 1,
     type: 'gradient',
     gradient: {
-      shade: 'dark',
+      shade: 'light',
       type: "vertical",
-      gradientToColors: ['#39CCCC80', '#00FF7F80', '#FF4D4D80'],
+      opacityFrom: 0.9,
+      opacityTo: 0.6,
       stops: [0, 90, 100]
     }
   }
